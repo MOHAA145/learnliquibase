@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PATH="/var/jenkins_home/liquibase-4.3.5:$PATH"
+    }
     stages {
         stage('Checkout the Git Repository') {
             steps {
@@ -10,16 +13,14 @@ pipeline {
             steps {
                 echo 'Performing Pre-check conditions'
                 sh '''
-                { set +x; } 2>/dev/null
-                echo "Current project: "$PROJ
-                echo "Current scm branch: "$BRANCH
-                echo "Current environment: "$ENVIRONMENT_STEP
+                liquibase --version
                 '''
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+
             }
         }
     }
