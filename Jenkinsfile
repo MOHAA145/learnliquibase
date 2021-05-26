@@ -1,12 +1,9 @@
 pipeline {
     agent any
-    environment {
-        PATH="/var/jenkins_home/liquibase-4.3.5:$PATH"
-    }
     stages {
         stage('Checkout the Git Repository') {
             steps {
-                echo 'This step is already being carried out as Jenkins file is present in the Liquibase repository'
+                echo 'This step is already being carried out by Jenkins feault stage "Declarative: Checkout SCM"'
             }
         }
         stage('Pre-Check') {
