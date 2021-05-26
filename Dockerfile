@@ -10,7 +10,7 @@ RUN add-apt-repository \
        $(lsb_release -cs) stable"
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
-#RUN mkdir /opt/liquibase-4.3.5
 ADD liquibase-4.3.5.tar.gz /opt/liquibase-4.3.5
+ADD mysql-connector-java-8.0.20.zip /opt/liquibase-4.3.5/mysql-connector-java-8.0.20
 ENV PATH="${PATH}:/opt/liquibase-4.3.5"
 RUN jenkins-plugin-cli --plugins "blueocean:1.24.6 docker-workflow:1.26"
