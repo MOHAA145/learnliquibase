@@ -10,7 +10,8 @@ pipeline {
             steps {
                 echo 'Performing Pre-check conditions'
                 sh '''
-                liquibase --version
+                { set +x; } 2>/dev/null
+                      
                 '''
             }
         }
