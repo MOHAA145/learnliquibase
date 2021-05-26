@@ -9,7 +9,7 @@ RUN add-apt-repository \
        "deb [arch=amd64] https://download.docker.com/linux/debian \
        $(lsb_release -cs) stable"
 RUN apt-get update && apt-get install -y docker-ce-cli
-COPY mysql-connector-java_8.0.25-1debian10_all.deb /tmp
+ADD mysql-connector-java_8.0.25-1debian10_all.deb /tmp
 RUN cd /tmp \
     dpkg -x mysql-connector-java_8.0.25-1debian10_all.deb /tmp/mysql-connector-java_8.0.25
 USER jenkins
