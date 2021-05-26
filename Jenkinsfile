@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    parameters {
+    string defaultValue: 'jdbc:mysql://ecommercedb.csrmnme0xzyb.us-east-1.rds.amazonaws.com:3306/ecommerce_db', description: '', name: 'DB_URL', trim: false
+    string defaultValue: 'admin', description: '', name: 'DB_username', trim: false
+    string defaultValue: 'admin123', description: '', name: 'DB_password', trim: false
+    string defaultValue: 'changelog_Release1.mysql.xml', description: '', name: 'changelogfile', trim: false
+    }
     stages {
         stage('Checkout the Git Repository') {
             steps {
@@ -11,6 +17,7 @@ pipeline {
                 echo 'Performing Pre-check conditions'
                 sh '''
                 { set +x; } 2>/dev/null
+                cd liquibase_demo_project
                 liquibase --version
                 ls -la
                 '''
