@@ -31,7 +31,7 @@ pipeline {
                 sh '''
                     echo '------------------------------------'
                     echo "----------liquibase updateSQL----------"
-                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} updateSQL
+                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --changeLogFile=${changelogfile} updateSQL
                     echo "------------------------------------"
                 '''
 
