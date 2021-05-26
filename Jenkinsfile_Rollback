@@ -33,11 +33,11 @@ pipeline {
                     echo '------------------------------------'
                     echo "----------liquibase rollbackCountSQL----------"
                     cd liquibase_demo_project
-                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} rollbackCountSQL --value=${rollbacks}
+                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} rollbackCountSQL ${rollbacks}
                     echo "------------------------------------"
                     echo "----------liquibase rollbackCount----------"
                     echo "------------------------------------"
-                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} rollbackCount --value=${rollbacks}
+                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} rollbackCount ${rollbacks}
                     echo "------------------------------------"
                 '''
 
