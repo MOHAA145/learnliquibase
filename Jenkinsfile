@@ -11,7 +11,8 @@ pipeline {
                 echo 'Performing Pre-check conditions'
                 sh '''
                 { set +x; } 2>/dev/null
-                      
+                liquibase --version
+                echo $BRANCH_NAME   
                 '''
             }
         }
