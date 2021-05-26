@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 { set +x; } 2>/dev/null
                 liquibase --version
-                pwd 
+                ls -la
                 '''
             }
         }
