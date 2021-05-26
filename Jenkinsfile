@@ -21,8 +21,7 @@ pipeline {
                 cd liquibase_demo_project
                 liquibase --version
                 ls -la
-                liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} \
-                 --driver=${DB_driver} --changeLogFile=${changelogfile} status
+                liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} status
                 '''
             }
         }
