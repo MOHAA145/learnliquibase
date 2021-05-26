@@ -21,8 +21,8 @@ pipeline {
                 cd liquibase_demo_project
                 liquibase --version
                 ls -la
-                liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} \
-                --classpath="/opt/liquibase-4.3.5/mysql-connector-java_8.0.25/usr/share/java/mysql-connector-java-8.0.25.jar" status
+                liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} \
+                 --driver=${DB_driver} --changeLogFile=${changelogfile} status
                 '''
             }
         }
