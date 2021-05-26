@@ -12,5 +12,5 @@ RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
 #RUN mkdir /opt/liquibase-4.3.5
 ADD liquibase-4.3.5.tar.gz /opt/liquibase-4.3.5
-RUN export PATH=$PATH:/opt/liquibase-4.3.5
+ENV PATH="${PATH}:/opt/liquibase-4.3.5"
 RUN jenkins-plugin-cli --plugins "blueocean:1.24.6 docker-workflow:1.26"
