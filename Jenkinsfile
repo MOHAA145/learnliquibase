@@ -20,14 +20,20 @@ pipeline {
                 { set +x; } 2>/dev/null
                 cd liquibase_demo_project
                 liquibase --version
-                ls -la
+                echo '------------------------------------'
+                echo "------Liquibase Status--------------"
                 liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} status --verbose
                 '''
             }
         }
-        stage('Deploy') {
+        stage('Database Update') {
             steps {
-                echo 'Deploying....'
+                sh '''
+                    echo '------------------------------------'
+                    echo "----------liquibase updateSQL----------"
+                    liquibase --url=${DB_URL} --username=${DB_username} --password=${DB_password} --driver=${DB_driver} --changeLogFile=${changelogfile} updateSQL
+                    echo "------------------------------------"
+                '''
 
             }
         }
