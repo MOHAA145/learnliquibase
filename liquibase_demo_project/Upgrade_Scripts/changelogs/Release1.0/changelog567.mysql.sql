@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset dmanishgandhi:JIRA_0001
+-- changeset dmanishgandhi:JIRA_008
 CREATE TABLE `liquibase_testing` (
   `review_id` varchar(32) NOT NULL,
   `order_id` varchar(32) NOT NULL,
