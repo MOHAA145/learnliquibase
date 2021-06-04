@@ -10,6 +10,3 @@ CREATE TABLE `liquibase_testing` (
   `review_creation_date` timestamp NULL DEFAULT NULL,
   `review_answer_timestamp` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- changeset dmanishgandhi:JIRA_002
-ALTER TABLE liquibase_testing DROP COLUMN review_creation_date, DROP COLUMN review_answer_timestamp;
