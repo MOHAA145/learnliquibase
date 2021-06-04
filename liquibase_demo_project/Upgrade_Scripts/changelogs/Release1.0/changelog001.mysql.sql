@@ -1,7 +1,7 @@
 -- liquibase formatted sql
 
 -- changeset dmanishgandhi:JIRA_001
-CREATE TABLE `order_reviews` (
+CREATE TABLE `liquibase_testing` (
   `review_id` varchar(32) NOT NULL,
   `order_id` varchar(32) NOT NULL,
   `review_score` decimal(10,0) NOT NULL,
@@ -12,4 +12,4 @@ CREATE TABLE `order_reviews` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- changeset dmanishgandhi:JIRA_002
-ALTER TABLE order_reviews DROP COLUMN review_creation_date, DROP COLUMN review_answer_timestamp;
+ALTER TABLE liquibase_testing DROP COLUMN review_creation_date, DROP COLUMN review_answer_timestamp;
