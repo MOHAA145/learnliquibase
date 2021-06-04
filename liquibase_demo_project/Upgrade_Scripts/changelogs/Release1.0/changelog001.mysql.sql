@@ -10,3 +10,5 @@ CREATE TABLE `liquibase_testing` (
   `review_creation_date` timestamp NULL DEFAULT NULL,
   `review_answer_timestamp` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--rollback DROP TABLE liquibase_testing;
