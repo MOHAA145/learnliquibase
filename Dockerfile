@@ -9,8 +9,9 @@ RUN add-apt-repository \
        "deb [arch=amd64] https://download.docker.com/linux/debian \
        $(lsb_release -cs) stable"
 RUN apt-get update && apt-get install -y docker-ce-cli
+RUN usermod -a -G root jenkins
 USER jenkins
 ADD liquibase-4.3.5.tar.gz /opt/liquibase-4.3.5
 ADD mysql-connector-java-5.1.26.tar.gz /opt/
 ENV PATH="${PATH}:/opt/liquibase-4.3.5"
-RUN jenkins-plugin-cli --plugins "blueocean:1.24.6 docker-workflow:1.26"
+#RUN jenkins-plugin-cli --plugins "blueocean:1.24.6 docker-workflow:1.26"
